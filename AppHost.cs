@@ -20,6 +20,8 @@ namespace ServiceStackv4_Demo_TeamsApi
 
         public override void Configure(Container container)
         {
+            Plugins.Add(new CorsFeature { AutoHandleOptionsRequests = true });
+
             container.Register<IDbConnectionFactory>(new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider));
 
             InitData(container);
