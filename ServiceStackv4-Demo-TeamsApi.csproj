@@ -94,6 +94,8 @@
     <Content Include="sqlite3.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="StaticPage.html" />
+    <Content Include="Templates\HtmlFormat.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -125,7 +128,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>55377</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:53990/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

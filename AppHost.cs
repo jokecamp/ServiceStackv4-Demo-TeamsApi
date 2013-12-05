@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Web;
 using Funq;
 using ServiceStack;
 using ServiceStack.Data;
-using ServiceStack.DataAnnotations;
 using ServiceStack.OrmLite;
 
 namespace ServiceStackv4_Demo_TeamsApi
@@ -37,11 +33,11 @@ namespace ServiceStackv4_Demo_TeamsApi
 
                 var teams = new List<Team>
                     {
-                        new Team() {Id = 1, Name = "Manchester United"},
-                        new Team() {Id = 2, Name = "Arsenal"},
-                        new Team() {Id = 3, Name = "Manchester City"},
-                        new Team() {Id = 4, Name = "Chelsea"},
-                        new Team() {Id = 5, Name = "Newcastle United"},
+                        new Team() {Id = 1, Name = "Manchester United", CreatedDate = DateTime.Now},
+                        new Team() {Id = 2, Name = "Arsenal", CreatedDate = DateTime.Now},
+                        new Team() {Id = 3, Name = "Manchester City", CreatedDate = DateTime.Now},
+                        new Team() {Id = 4, Name = "Chelsea", CreatedDate = DateTime.Now},
+                        new Team() {Id = 5, Name = "Newcastle United", CreatedDate = DateTime.Now},
                     };
 
                 db.InsertAll(teams);
@@ -57,6 +53,7 @@ namespace ServiceStackv4_Demo_TeamsApi
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 
     [Route("/teams")]
