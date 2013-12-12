@@ -14,6 +14,7 @@ namespace ServiceStackv4_Demo_TeamsApi
         {
             // We can dynamically add routes now. I believe this must be done in the app host constructor. Does not work in the Configure section.
             // https://github.com/ServiceStack/ServiceStack/wiki/Release-Notes#add-code-first-attributes-at-runtime-de-coupled-from-pocos
+
             typeof(Team).AddAttributes(new RouteAttribute("/teams/{Id}"));
             typeof(GetTeams).AddAttributes(new RouteAttribute("/teams"));
         }
@@ -41,50 +42,23 @@ namespace ServiceStackv4_Demo_TeamsApi
             using (var db = container.Resolve<IDbConnectionFactory>().OpenDbConnection())
             {
                 db.CreateTableIfNotExists<Team>();
+                db.CreateTableIfNotExists<League>();
 
-                var teams = new List<Team>
+                db.InsertAll(new List<Team>
                     {
                         new Team() {Id = 1, Name = "Manchester United", CreatedDate = DateTime.Now, HideMe = "you shouldn't see this"},
                         new Team() {Id = 2, Name = "Arsenal", CreatedDate = DateTime.Now},
                         new Team() {Id = 3, Name = "Manchester City", CreatedDate = DateTime.Now},
                         new Team() {Id = 4, Name = "Chelsea", CreatedDate = DateTime.Now},
                         new Team() {Id = 5, Name = "Newcastle United", CreatedDate = DateTime.Now},
-                    };
+                    });
 
-                db.InsertAll(teams);
+                db.InsertAll(new List<League>
+                    {
+                        new League() {Id = 1, Name = "English Premier League"},
+                        new League() {Id = 2, Name = "Major League Soccer"}
+                    });
             }
-        }
-    }
-
-    /// <summary>
-    /// A sports team DTO
-    /// 
-    /// Clean POCO that has no Attributes or routes if that is your cup of tea
-    /// 
-    /// </summary>
-    public class Team : IReturn<Team>
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime CreatedDate { get; set; }
-
-        public string HideMe { get; set; }
-    }
-    public class GetTeams : IReturn<List<Team>> { }
-
-    public class TeamService : Service
-    {
-        public object Get(GetTeams request)
-        {
-            // New OrmLite Syntax
-            // https://github.com/ServiceStack/ServiceStack/wiki/Release-Notes#improved-consistency
-            return Db.Select<Team>();
-        }
-
-        public object Get(Team request)
-        {
-            // object or returns null
-            return Db.SingleById<Team>(request.Id);
         }
     }
 }
