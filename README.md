@@ -11,6 +11,7 @@ Some of the features demonstrated with this project:
 - serving static files outside /api level 
 - a few OrmLite query examples
 - IReturn marker interfaces no longer required. See the League DTO/Service/Consumer code
+- Example bypass of RequiredRole attribute using AuthSecret in querystring. See Player DTO/Service
 
 This project uses the "Starter" option seen at https://servicestack.net/pricing. 
 It is subject to the qutoas outlined at https://servicestack.net/download#free-quotas

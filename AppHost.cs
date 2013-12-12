@@ -30,6 +30,8 @@ namespace ServiceStackv4_Demo_TeamsApi
             SetConfig(new HostConfig
                 {
                     DebugMode = true,
+                    //?authsecret=opensesame
+                    AdminAuthSecret = "opensesame"
                 });
         }
 
