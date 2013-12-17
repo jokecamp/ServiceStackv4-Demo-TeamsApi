@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceStackv4-Demo-TeamsApi", "ServiceStackv4-Demo-TeamsApi.csproj", "{982F8347-92A4-4AB2-A4FC-D9D5481466BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsApi.Tests", "tests\TeamsApi.Tests\TeamsApi.Tests.csproj", "{1C6331EB-8ADB-4077-9636-2B96E57AC57B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{982F8347-92A4-4AB2-A4FC-D9D5481466BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{982F8347-92A4-4AB2-A4FC-D9D5481466BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{982F8347-92A4-4AB2-A4FC-D9D5481466BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C6331EB-8ADB-4077-9636-2B96E57AC57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C6331EB-8ADB-4077-9636-2B96E57AC57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C6331EB-8ADB-4077-9636-2B96E57AC57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C6331EB-8ADB-4077-9636-2B96E57AC57B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

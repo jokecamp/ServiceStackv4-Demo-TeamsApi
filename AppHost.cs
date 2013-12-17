@@ -57,8 +57,20 @@ namespace ServiceStackv4_Demo_TeamsApi
 
                 db.InsertAll(new List<League>
                     {
-                        new League() {Id = 1, Name = "English Premier League"},
-                        new League() {Id = 2, Name = "Major League Soccer"}
+                        new League()
+                            {
+                                Id = 1,
+                                Name = "English Premier League",
+                                DateCreated = DateTime.Now,
+                                DateUpdated = DateTime.Now
+                            },
+                        new League()
+                            {
+                                Id = 2,
+                                Name = "Major League Soccer",
+                                DateCreated = DateTime.Now,
+                                DateUpdated = DateTime.Now
+                            }
                     });
             }
         }
